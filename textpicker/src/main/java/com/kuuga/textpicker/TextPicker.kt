@@ -13,10 +13,16 @@ import android.widget.NumberPicker
 import java.lang.reflect.Field
 
 class TextPicker(context: Context, attrs: AttributeSet) : NumberPicker(context, attrs) {
-    fun setData(names: ArrayList<String>) {
-        minValue = 0
-        maxValue = names.size - 1
-        displayedValues = names.toTypedArray()
+    fun setData(displays: ArrayList<String>) {
+        if (displays.isEmpty()) {
+            minValue = 0
+            maxValue = 0
+            displayedValues = arrayListOf<String>().toTypedArray()
+        } else {
+            minValue = 0
+            maxValue = displays.size - 1
+            displayedValues = displays.toTypedArray()
+        }
         invalidate()
     }
 

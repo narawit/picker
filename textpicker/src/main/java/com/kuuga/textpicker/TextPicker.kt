@@ -17,7 +17,7 @@ class TextPicker(context: Context, attrs: AttributeSet) : NumberPicker(context, 
         if (displays.isEmpty()) {
             minValue = 0
             maxValue = 0
-            displayedValues = arrayListOf<String>().toTypedArray()
+            displayedValues = arrayListOf("").toTypedArray()
         } else {
             minValue = 0
             maxValue = displays.size - 1
